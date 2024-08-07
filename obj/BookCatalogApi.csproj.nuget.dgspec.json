@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\rodri\\BookCatalogApi\\BookCatalogApi.csproj": {}
+    "C:\\Users\\rodri\\BookCatalogApi\\BookCatalogApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\rodri\\BookCatalogApi\\BookCatalogApi.csproj": {
+    "C:\\Users\\rodri\\BookCatalogApi\\BookCatalogApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\rodri\\BookCatalogApi\\BookCatalogApi.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\BookCatalogApi\\BookCatalogApi.csproj",
         "projectName": "BookCatalogApi",
-        "projectPath": "c:\\Users\\rodri\\BookCatalogApi\\BookCatalogApi.csproj",
+        "projectPath": "C:\\Users\\rodri\\BookCatalogApi\\BookCatalogApi.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\rodri\\BookCatalogApi\\obj\\",
+        "outputPath": "C:\\Users\\rodri\\BookCatalogApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.2, )"
