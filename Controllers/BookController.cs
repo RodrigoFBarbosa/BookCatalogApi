@@ -21,7 +21,7 @@ public class BookController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Book>> Get () 
     {
-        var books = _context.Books.ToList();
+        var books = _context.Books.AsNoTracking().Take(10).ToList();
 
         if (books is null)
             return NotFound("No books were found.");
@@ -55,5 +55,31 @@ public class BookController : ControllerBase
         return new CreatedAtRouteResult("GettingBook",
             new { id = book.Id }, book );
 
+    }
+
+    [HttpPut("{id:int}")]
+    public ActionResult<Book> Put(int id, Book book) 
+    {
+        if (id != book.Id)
+            return BadRequest();
+
+        _context.Entry(book).State = EntityState.Modified;
+        _context.SaveChanges();
+
+        return Ok(book);
+    }
+
+    [HttpDelete("{id:int}")]
+    public ActionResult<Book> Delete(int id)
+    {
+        var book = _context.Books.FirstOrDefault(b => b.Id == id);
+
+        if(book is null) 
+            return NotFound();
+
+        _context.Books.Remove(book);
+        _context.SaveChanges();
+
+        return Ok(book);
     }
 }

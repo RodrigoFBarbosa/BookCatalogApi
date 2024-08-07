@@ -1,8 +1,10 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookCatalogApi.Models;
 
+[Table("Category")]
 public class Category 
 {
     public Category()
